@@ -1,0 +1,98 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>语音公交</title>
+  <style type="text/css">
+  body {
+    font-size: 16px;
+  }
+
+  html,
+  body,
+  #app,
+  .page-container {
+    height: 100%;
+    background: #eee;
+    width: 3.75rem;
+    overflow-x: hidden;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .welcome {
+    width: 3rem;
+    height: 1rem;
+    padding: .2rem 0;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .welcome-title {
+    font-size: .12rem;
+    color: #999;
+    width: 100%;
+    padding: 0 .2rem;
+    box-sizing: border-box;
+  }
+  .welcome-btn {
+    background: #1abc9c;
+    color: #fff;
+    line-height: .35rem;
+    width: 1.5rem;
+    text-align: center;
+  }
+  </style>
+  <script type="text/javascript">
+  (function(designW) { var prevScreenW = null;
+    function resize() { var screenW = window.innerWidth; if (prevScreenW == screenW) { return } else { prevScreenW = screenW } document.documentElement.style.fontSize = 100 * screenW / designW + "px" } window.onresize = function() { resize() };
+    resize();
+    window.onload = function() { resize() } })(375);
+    function welcome() {
+      document.getElementById('audio-mute').play()
+      document.getElementById('audio').play()
+      document.getElementsByClassName('mask')[0].style.display = 'none'
+    }
+  </script>
+</head>
+
+<body>
+  <audio loop id="audio-mute" controls style="opacity: 0;height: 0;display: block;" src="http://voice_bus.puzhibaike.com/api/voice/bus/mute/minutes/0" audoplay>
+    抱歉，您的浏览器不支持播放语音。
+  </audio>
+  <div class="mask">
+    <div class="welcome">
+      <div class="welcome-title">为了避免打扰您的生活，每次启动应用需要授权语音播放！</div>
+      <audio id="audio" controls style="opacity: 0;height: 0;" src="http://voice_bus.puzhibaike.com/api/voice/bus/welcome/minutes/0">
+        抱歉，您的浏览器不支持播放语音。
+      </audio>
+      <div class="welcome-btn" onclick="welcome()">授权语音播放</div>
+    </div>
+  </div>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
