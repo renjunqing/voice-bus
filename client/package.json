@@ -1,7 +1,7 @@
 {
-  "name": "my-project",
+  "name": "voice-bus",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "上海公交查询，到站语音提醒",
   "author": "任军庆 <602575696@qq.com>",
   "private": true,
   "scripts": {
