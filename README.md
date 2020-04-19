@@ -1,5 +1,7 @@
 #### 功能简介
 - 查询上海公交的到站时间，支持多条线路，同时可以语音提醒。
+<br />
+
 ![](https://pz-common.oss-cn-qingdao.aliyuncs.com/junqing.ren/1587290683850.jpg "")
 
 ![](https://pz-common.oss-cn-qingdao.aliyuncs.com/junqing.ren/1587290608256.jpg "")
